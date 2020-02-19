@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu&display=swap");
+
+:root {
+  --gray: hsl(197, 10%, 45%);
+  --middle-gray: hsl(240, 6%, 92%);
+  --light-gray: hsl(240, 6%, 97%);
+  --accent: hsl(197, 100%, 44%);
+  --accent-hover: hsl(197, 100%, 40%);
+  --accent-active: hsl(197, 100%, 35%);
+  --focus-shadow: 0px 0px 2px var(--accent);
+  --focus-border: solid 1px var(--accent);
+  --focus-border-inactive: solid 1px transparent;
+  --max-width: 1000px;
+  --transparent-white: hsla(0, 100%, 100%, 1);
+  --red: rgb(249, 73, 73);
+  --green: hsl(170, 90%, 44%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Ubuntu";
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  padding-top: 100px;
+}
+
+.tabs {
+  margin: 0 2rem;
+  align-self: center;
+  width: 300px;
+  background: #fff;
+  border-radius: 0.8rem;
+  box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.tabs__list {
+  display: flex;
+  background: #f6f6f7;
+}
+
+.tabs__tab {
+  color: var(--accent);
+  background: none;
+  display: inline-block;
+  margin: 0;
+  padding: 1rem 1.5rem;
+  border: none;
+  flex: 1 1;
+  text-align: center;
+  cursor: pointer;
+}
+
+.tabs__tab[aria-selected="true"],
+.tabs__tab.active {
+  color: var(--accent);
+  background: white;
+}
+
+.tabs__tab.disabled {
+  opacity: 0.25;
+}
+
+.tabs__panels {
+  padding: 1.5rem;
+}
+
+.btn {
+  margin-top: 1rem;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  cursor: pointer;
+}
+.btn_icon {
+  font-size: 1.25rem;
+  background-color: var(--accent);
+  color: white;
+  padding: 0.5rem 1rem;
+  border: var(--focus-border-inactive);
+  padding: 0.5rem;
+  border-radius: 9999px;
+}
+
+.inputField {
+  display: block;
+  font-size: 1.25rem;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  width: 100%;
+}
+.label-hidden {
+  border: 0px;
+  clip: rect(0px, 0px, 0px, 0px);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0px;
+  overflow: hidden;
+  position: absolute;
+}
