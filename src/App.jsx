@@ -1,7 +1,10 @@
+import CartList from "./components/carts/CartList"
+import items from "./data"
+
 function App() {
   return (
     <div className="container">
-      <h1>Mini project 1</h1>
+      <CartList items={items} />
     </div>
   )
 }
