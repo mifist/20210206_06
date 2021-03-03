@@ -2,10 +2,11 @@ import React from "react"
 import Counter from "./components/Counter"
 import Form from "./components/Form"
 import {Button, NewButton} from "./components/styles/counter"
+import {WrapApp} from "./components/styles/app"
 
 function App() {
   return (
-    <div className="container">
+    <WrapApp>
       <div className="row">
         <Counter>
           {({count, increment, decrement}) => (
@@ -32,7 +33,7 @@ function App() {
       <div className="row">
         <Form />
       </div>
-    </div>
+    </WrapApp>
   )
 }
 
