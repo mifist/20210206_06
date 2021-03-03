@@ -7,6 +7,7 @@ import {
   ButtonGroup,
   Button,
   Spinner,
+  FullSpinner,
 } from "./styles/app"
 
 const initState = {email: "", password: ""}
@@ -28,6 +29,7 @@ const Form = () => {
   }
   return (
     <WrapForm onSubmit={handleSubmit}>
+      {loading && <FullSpinner />}
       <FormGroup>
         <Label htmlFor="email">Email</Label>
         <Input name="email" value={data.email} onChange={handleChange} />
