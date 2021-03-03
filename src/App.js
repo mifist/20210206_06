@@ -1,13 +1,25 @@
-import React from "react"
+/** @jsxImportSource @emotion/react */
+import {jsx} from "@emotion/react"
+
 import Counter from "./components/Counter"
 import Form from "./components/Form"
 import {Button, NewButton} from "./components/styles/counter"
 import {WrapApp} from "./components/styles/app"
+import {yellow, green, gray} from "./components/styles/colors"
+import * as mq from "./components/styles/mq"
 
 function App() {
   return (
     <WrapApp>
-      <div className="row">
+      <div
+        css={{
+          backgroundColor: gray,
+          [mq.small]: {backgroundColor: yellow},
+          [mq.medium]: {backgroundColor: green},
+          [mq.large]: {backgroundColor: "transparent"},
+        }}
+        className="row"
+      >
         <Counter>
           {({count, increment, decrement}) => (
             <>

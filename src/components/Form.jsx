@@ -1,32 +1,47 @@
 import {useState} from "react"
-import {WrapForm} from "./styles/app"
+import {
+  WrapForm,
+  FormGroup,
+  Input,
+  Label,
+  ButtonGroup,
+  Button,
+  Spinner,
+} from "./styles/app"
 
 const initState = {email: "", password: ""}
 
 const Form = () => {
   const [data, setData] = useState(initState)
+  const [loading, setLoading] = useState(false)
 
   const handleChange = ({target}) => {
     setData(x => ({...x, [target.name]: target.value}))
   }
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault()
+    setLoading(true)
+    await new Promise(resolve => setTimeout(() => resolve(), 3000))
+    setLoading(false)
     console.log(data)
   }
   return (
     <WrapForm onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="email">Email</label>
-        <input name="email" value={data.email} onChange={handleChange} />
-      </div>
-      <div>
-        <label htmlFor="password">Password</label>
-        <input name="password" value={data.password} onChange={handleChange} />
-      </div>
-      <div>
-        <button type="submit">Login</button>
-      </div>
+      <FormGroup>
+        <Label htmlFor="email">Email</Label>
+        <Input name="email" value={data.email} onChange={handleChange} />
+      </FormGroup>
+      <FormGroup>
+        <Label htmlFor="password">Password</Label>
+        <Input name="password" value={data.password} onChange={handleChange} />
+      </FormGroup>
+      <ButtonGroup>
+        <Button mr="1rem" type="submit">
+          Login {loading && <Spinner />}
+        </Button>
+        <Button type="reset">Reset</Button>
+      </ButtonGroup>
     </WrapForm>
   )
 }
