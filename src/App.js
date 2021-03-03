@@ -1,6 +1,7 @@
 import React from "react"
 import Counter from "./components/Counter"
 import Form from "./components/Form"
+import {Button, NewButton} from "./components/styles/counter"
 
 function App() {
   return (
@@ -10,8 +11,10 @@ function App() {
           {({count, increment, decrement}) => (
             <>
               <h1>Counter: {count}</h1>
-              <button onClick={increment}>Increment</button>
-              <button onClick={decrement}>Decrement</button>
+              <Button marginRight="1rem" onClick={increment}>
+                Increment
+              </Button>
+              <NewButton onClick={decrement}>Decrement</NewButton>
             </>
           )}
         </Counter>

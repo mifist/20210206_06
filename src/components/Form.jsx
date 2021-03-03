@@ -1,3 +1,5 @@
+const initState = {email: "", password: ""}
+
 const Form = () => {
   const handleChange = () => {
     // todo
